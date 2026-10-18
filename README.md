@@ -30,7 +30,7 @@ Every push to `main` builds a signed APK on GitHub Actions and publishes it as a
 
 ## Songs
 
-27 pieces. "Bends" counts the notes that need a bend or overblow in the key the app picks for a C-style harp.
+27 pieces. The level reflects the key the app picks for a C harp: Beginner needs no bends at all.
 
 | Song | Composer | Level |
 | --- | --- | --- |
