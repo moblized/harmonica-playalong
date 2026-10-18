@@ -339,7 +339,12 @@ class Sequencer(
                 checkpoint(i, beat, beatsPerFrame)
             }
         }
-        for (j in 0 until frames) out[j] = softClip(out[j])
+        for (j in 0 until frames) out[j] = softClip(out[j] * MASTER)
+    }
+
+    private companion object {
+        /** Overall loudness; phone speakers need a healthy level. */
+        const val MASTER = 1.5f
     }
 
     private fun softClip(x: Float): Float {

@@ -46,8 +46,7 @@ import app.harmonicaplayalong.data.AppPrefs
 import app.harmonicaplayalong.data.Settings
 import app.harmonicaplayalong.data.SongProgress
 import app.harmonicaplayalong.music.Arranger
-import app.harmonicaplayalong.music.Arrangement
-import app.harmonicaplayalong.music.Difficulty
+import app.harmonicaplayalong.music.Arrangement as SongArrangement
 import app.harmonicaplayalong.music.HarpKey
 import app.harmonicaplayalong.music.SongLibrary
 
@@ -60,11 +59,11 @@ private enum class Filter(val label: String) {
 }
 
 /** Best-fit arrangements, worked out once. */
-private val arrangements: Map<String, Arrangement> by lazy {
+private val arrangements: Map<String, SongArrangement> by lazy {
     SongLibrary.songs.associate { it.id to Arranger.best(it) }
 }
 
-private fun arrangementOf(id: String, progress: SongProgress?): Arrangement {
+private fun arrangementOf(id: String, progress: SongProgress?): SongArrangement {
     val auto = arrangements.getValue(id)
     val shift = progress?.shift ?: return auto
     return if (shift == auto.shift) auto else Arranger.arrange(auto.song, shift)
@@ -167,7 +166,7 @@ fun LibraryScreen(
 
 @Composable
 private fun SongCard(
-    arrangement: Arrangement,
+    arrangement: SongArrangement,
     settings: Settings,
     progress: SongProgress?,
     onOpen: () -> Unit,
