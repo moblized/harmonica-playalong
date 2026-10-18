@@ -133,8 +133,12 @@ object TimelineBuilder {
                     }
                 }
             }
-            BackingStyle.WALTZ -> steps(1.0) { t, _ ->
-                if (beatInBar(t, score) < 1e-6) bassNote(t, 0.95, bass) else stab(t, 0.8, 0.6f)
+            BackingStyle.WALTZ -> {
+                // one-two-three on the beats of the bar: quarters in 3/4, eighths in 3/8
+                val step = if (score.beatsPerBar < 2.0) score.beatsPerBar / 3.0 else 1.0
+                steps(step) { t, _ ->
+                    if (beatInBar(t, score) < 1e-6) bassNote(t, step * 0.95, bass) else stab(t, step * 0.8, 0.6f)
+                }
             }
             BackingStyle.ARPEGGIO -> steps(score.beatsPerBar) { t, _ ->
                 val notes = listOf(bass, fifth, bass + 12)

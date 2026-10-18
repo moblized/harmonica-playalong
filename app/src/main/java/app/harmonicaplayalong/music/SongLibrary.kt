@@ -301,8 +301,8 @@ object SongLibrary {
         "violin-concerto", "sonatina-menuetto",
         "canon-in-d", "bach-minuet", "bach-air", "emperor-hymn",
         "eine-kleine", "rondo-alla-turca", "sonata-facile", "twinkle",
-        "schubert-ave-maria", "gounod-ave-maria", "chopin-prelude-7", "wedding-march", "brahms-lullaby",
-        "blue-danube", "largo", "gymnopedie", "entertainer", "jupiter",
+        "schubert-ave-maria", "traumerei", "gounod-ave-maria", "chopin-prelude-7", "wedding-march", "brindisi",
+        "brahms-lullaby", "toreador", "blue-danube", "largo", "stars-and-stripes", "gymnopedie", "entertainer", "jupiter",
     )
 
     val songs: List<Song> = (firstBatch + MoreSongs.songs).sortedBy { s ->

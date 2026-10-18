@@ -1,7 +1,7 @@
 # Harmonica Play-Along
 
-An Android app for playing classical melodies on a 10-hole diatonic harmonica: 27 pieces including Beethoven's Ode to Joy, Für Elise,
-the Fifth and Seventh symphonies and the Moonlight and Pathétique sonatas, plus Mozart, Bach, Schubert, Chopin, Satie, Holst and more.
+An Android app for playing classical melodies on a 10-hole diatonic harmonica: 31 pieces including Beethoven's Ode to Joy, Für Elise,
+the Fifth and Seventh symphonies and the Moonlight and Pathétique sonatas, plus Mozart, Bach, Schubert, Schumann, Chopin, Verdi, Bizet, Satie, Holst, Sousa and more.
 Built with Kotlin and Jetpack Compose.
 
 ## Install on your phone
@@ -30,7 +30,7 @@ Every push to `main` builds a signed APK on GitHub Actions and publishes it as a
 
 ## Songs
 
-27 pieces. The level reflects the key the app picks for a C harp: Beginner needs no bends at all.
+31 pieces. The level reflects the key the app picks for a C harp: Beginner needs no bends at all.
 
 | Song | Composer | Level |
 | --- | --- | --- |
@@ -52,12 +52,16 @@ Every push to `main` builds a signed APK on GitHub Actions and publishes it as a
 | Sonata facile (K. 545) | Mozart | Advanced |
 | Twinkle Variations — Theme | Mozart | Beginner |
 | Ave Maria | Schubert | Advanced |
+| Träumerei | Schumann | Advanced |
 | Ave Maria | Bach / Gounod | Advanced |
 | Prelude in A major, Op. 28 No. 7 | Chopin | Advanced |
 | Wedding March | Mendelssohn | Intermediate |
+| Brindisi — Libiamo (La traviata) | Verdi | Advanced |
 | Lullaby | Brahms | Beginner |
+| Toreador Song (Carmen) | Bizet | Intermediate |
 | The Blue Danube | Johann Strauss II | Advanced |
 | Largo — Going Home (New World Symphony) | Dvořák | Beginner |
+| The Stars and Stripes Forever — Trio | Sousa | Advanced |
 | Gymnopédie No. 1 | Satie | Advanced |
 | The Entertainer | Joplin | Advanced |
 | Jupiter — I Vow to Thee, My Country | Holst | Beginner |

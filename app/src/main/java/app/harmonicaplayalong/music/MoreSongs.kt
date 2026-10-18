@@ -319,5 +319,104 @@ internal object MoreSongs {
             chords = "- | C C7 | F C | C G7 | C | C C7 | F C | D7 | G7 | C C7 | F C | C G7 | C | C C7 | F Fm | C G7 | C",
             source = MUTOPIA,
         ),
+        Song(
+            id = "toreador",
+            title = "Toreador Song",
+            composer = "Georges Bizet",
+            work = "Carmen — the Toreador refrain, as it appears in the Prelude",
+            year = "1875",
+            about = "'Toréador, en garde!' — Escamillo's swaggering refrain, which Bizet also puts in the opera's Prelude. " +
+                "Proud dotted rhythms and one long held E.",
+            timeSignature = "2/4",
+            tempo = 104,
+            key = "F major",
+            style = BackingStyle.MARCH,
+            notation = """
+                C5q D5e. C5s | A4q A4q | A4e. G4s A4e. Bb4s | A4q. re | Bb4q G4e. C5s | A4q. re |
+                F4q D4e. G4s | C4q. re | G4h | G4e D5e C5e Bb4e | A4e G4e A4e Bb4e | A4q. re |
+                E4q A4q | A4q G#4e. B4s | E5h~ | E5h~ | E5e D5u E5u D5u C5e D5e | G4e A4e Bb4q~ |
+                Bb4e A4u Bb4u A4u F4e D5e | C5q. re | F4h |
+            """,
+            chords = "F D7 | F | F | F | C7 | F | G7 | C | Gm | Gm | Dm | Dm | Am | B7 E7 | A | A | G7 | Gm | C7 Dm | C7 | F |",
+            source = "$MUTOPIA From the piano edition of the Prelude; the final F is added so the tune ends at home.",
+        ),
+        Song(
+            id = "brindisi",
+            title = "Brindisi — Libiamo",
+            composer = "Giuseppe Verdi",
+            work = "La traviata — Act I, 'Libiamo ne' lieti calici'",
+            year = "1853",
+            about = "The drinking song from La traviata: a lilting one-in-a-bar waltz that Alfredo starts and the whole party joins. " +
+                "This is his first verse.",
+            timeSignature = "3/8",
+            tempo = 100,
+            key = "Bb major",
+            pickupBeats = 0.5,
+            style = BackingStyle.WALTZ,
+            notation = """
+                F4e | D5q.~ | D5e F4e D5e | D5e F4e D5e | D5e C#5e D5e | F5q.~ | F5e Eb5e D5e | C5e C5s B4s C5s D5s | C5e C5s B4s C5s D5s | C5q Bb4e | F4e re F4e |
+                D5q.~ | D5e F4e D5e | D5e F4e D5e | D5e C#5e D5e | F5q.~ | F5e Eb5e D5e | C5e C5s B4s C5s D5s | C5e C5s B4s C5s D5s | Bb4q re | re re Bb4e |
+                Eb5q Eb5e | Eb5e Eb5s D5s Eb5s F5s | Eb5q D5e | D5q F4e | C5q C5e | C5e C5s B4s C5s D5s | C5q. | Bb4e re Bb4e |
+                Eb5q Eb5e | Eb5e Eb5s D5s Eb5s F5s | Eb5q. | D5q F5e | A4q A4e | A4e A4s G#4s A4s Bb4s | A4q.~ | A4e C5e F4e |
+                D5q.~ | D5e F4e D5e | D5e F4e D5e | D5e C#5e D5e | G5q.~ | G5e F5e Eb5e | D5e D5s C#5s D5s Eb5s | C5e C5s B4s C5s D5s | Bb4q re
+            """,
+            chords = "- | Bb | Bb | Bb | Bb | Bb | Bb | F7 | F7 | Bb | Bb | " +
+                "Bb | Bb | Bb | Bb | Bb | Bb | F7 | F7 | Bb | Bb | " +
+                "Eb | Eb | Bb | Bb | F7 | F7 | F7 | Bb | " +
+                "Eb | Eb | F7 | Dm | A | A | Dm | F7 | " +
+                "Bb | Bb | Bb | Bb | G7 | Cm | Bb | F7 | Bb",
+            source = "$MUTOPIA From the piano transcription's vocal line.",
+        ),
+        Song(
+            id = "traumerei",
+            title = "Träumerei",
+            composer = "Robert Schumann",
+            work = "Kinderszenen (Scenes from Childhood), Op. 15 — No. 7",
+            year = "1838",
+            about = "'Dreaming': Schumann's tender little reverie. Every phrase rises from a low C and floats down again — " +
+                "play it softly and let the long notes sing.",
+            timeSignature = "4/4",
+            tempo = 76,
+            key = "F major",
+            pickupBeats = 1.0,
+            style = BackingStyle.FLOWING,
+            notation = """
+                C4q | F4h~ F4e E4e F4e A4e | C5e F5e F5h E5e D5e | C5e F5e G4e A4e Bb4e D5e F4e G4e | A4e C5e G4h C4q |
+                F4h~ F4e E4e F4e A4e | C5e A5e A5q. G5e F5e E5e | F5e A5e D5e F5e E5q. Eb5e | D5q E5e.~ E5z C5z C5q re C4e |
+                F4h~ F4e E4e F4e A4e | C5e Eb5e Eb5h D5e C5e | Bb4e D5e G4e A4e Bb4q. A4e | G4q. D4q. re F4e |
+                Bb4h~ Bb4e A4e Bb4e D5e | F5e Bb5e Bb5h A5e G5e | F5e A5e D5e E5e F5q. E5e | D5q. A4q. G4e.~ G4z C4z |
+                F4h~ F4e E4e F4e A4e | C5e F5e F5h E5e D5e | C5e F5e G4e A4e Bb4e D5e F4e G4e | A4e C5e G4h C4q |
+                F4h~ F4e E4e F4e A4e | C5e A5e A5q. G5e F5e D5e | C5e F5e G4e A4e Bb4e D5e G4e A4e | Bb4e D5e D4e E4e F4h
+            """,
+            chords = "- | F | Bb | Am G7 | F C7 | F | F Em | Dm C | G7 C | " +
+                "F | Cm D7 | Gm | Gm D | Bb | Bb A7 | Dm | Dm C7 | " +
+                "F | Bb | Am G7 | F C7 | F | F | Gm | C7 F",
+            source = MUTOPIA,
+        ),
+        Song(
+            id = "stars-and-stripes",
+            title = "The Stars and Stripes Forever",
+            composer = "John Philip Sousa",
+            work = "The Stars and Stripes Forever (march) — Trio",
+            year = "1896",
+            about = "The broad trio tune of America's national march, the part everyone hums. " +
+                "Long held notes over a brisk oom-pah — keep the breath steady.",
+            timeSignature = "2/2",
+            tempo = 200,
+            key = "Ab major",
+            pickupBeats = 2.0,
+            style = BackingStyle.MARCH,
+            notation = """
+                Eb5h | Eb5h Db5q C5q | C5h B4q C5q | C5w~ | C5h B4q C5q | C5h B4q C5q | Eb5h C5q. Eb5e | Db5w | Bb4h Bb4h |
+                Bb4h A4q Bb4q | Bb4h A4q Bb4q | Db5w~ | Db5h C5q Bb4q | C5q Eb5h. | F5h. F5q | Bb4w~ | Bb4h Eb5h |
+                Eb5h Db5q C5q | C5h B4q C5q | C5w~ | C5h B4q C5q | C5h B4q C5q | Db5q C5q Bb4q. G5e | Bb4w | Ab4h Ab4h |
+                Ab4h G4q Ab4q | Cb5h Bb4q Ab4q | Ab4w~ | Ab4q Ab4q Bb4q C5q | Eb5e re Ab4q Bb4q C5q | Eb5e re Eb4q F4q C5q | Bb4w | Ab4q rq rh
+            """,
+            chords = "- | Ab | Ab | Ab | Ab | Ab | Ab | Eb7 | Eb7 | " +
+                "Eb7 | Eb7 | Eb7 | Eb7 | Ab | Db | Eb | Eb | " +
+                "Ab | Ab | Ab | Ab | C7 | C7 | C7 | Fm | " +
+                "Dbm | Fb | Ab | Ab | Ab | Ab | Eb7 | Ab",
+            source = "$MUTOPIA From the piano edition (1897).",
+        ),
     )
 }
