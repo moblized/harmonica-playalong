@@ -1,7 +1,8 @@
 # Harmonica Play-Along
 
-An Android app for playing classical melodies on a 10-hole diatonic harmonica: 31 pieces including Beethoven's Ode to Joy, Für Elise,
-the Fifth and Seventh symphonies and the Moonlight and Pathétique sonatas, plus Mozart, Bach, Schubert, Schumann, Chopin, Verdi, Bizet, Satie, Holst, Sousa and more.
+An Android app for playing classical melodies on a 10-hole diatonic harmonica: 43 pieces including Beethoven's Ode to Joy, Für Elise,
+the Fifth and Seventh symphonies and the Moonlight and Pathétique sonatas, plus eleven by Mozart, all four of Vivaldi's Four Seasons,
+Rossini's William Tell galop, and Bach, Schubert, Schumann, Chopin, Verdi, Bizet, Satie, Holst, Sousa and more.
 Built with Kotlin and Jetpack Compose.
 
 ## Install on your phone
@@ -30,7 +31,7 @@ Every push to `main` builds a signed APK on GitHub Actions and publishes it as a
 
 ## Songs
 
-31 pieces. The level reflects the key the app picks for a C harp: Beginner needs no bends at all.
+43 pieces. The level reflects the key the app picks for a C harp: Beginner needs no bends at all.
 
 | Song | Composer | Level |
 | --- | --- | --- |
@@ -44,14 +45,26 @@ Every push to `main` builds a signed APK on GitHub Actions and publishes it as a
 | Violin Concerto — Rondo | Beethoven | Beginner |
 | Menuetto in G (Sonata Op. 49 No. 2) | Beethoven | Intermediate |
 | Canon in D | Pachelbel | Beginner |
+| Spring — Allegro (The Four Seasons) | Vivaldi | Intermediate |
+| Summer — The Storm (The Four Seasons) | Vivaldi | Advanced |
+| Autumn — Allegro (The Four Seasons) | Vivaldi | Beginner |
+| Winter — Largo (The Four Seasons) | Vivaldi | Advanced |
 | Minuet in G | Bach / Petzold | Advanced |
 | Air on the G String | Bach | Advanced |
 | Emperor Hymn | Haydn | Intermediate |
 | Eine kleine Nachtmusik | Mozart | Intermediate |
+| Eine kleine Nachtmusik — Romanze | Mozart | Intermediate |
+| Eine kleine Nachtmusik — Menuetto | Mozart | Advanced |
 | Rondo alla Turca | Mozart | Advanced |
+| Sonata in A (K. 331) — Theme | Mozart | Intermediate |
 | Sonata facile (K. 545) | Mozart | Advanced |
 | Twinkle Variations — Theme | Mozart | Beginner |
+| Minuet in F (K. 2) | Mozart | Advanced |
+| Horn Concerto No. 4 — Rondo | Mozart | Intermediate |
+| Deh vieni alla finestra (Don Giovanni) | Mozart | Advanced |
+| Ave verum corpus | Mozart | Advanced |
 | Ave Maria | Schubert | Advanced |
+| William Tell Overture — Finale | Rossini | Intermediate |
 | Träumerei | Schumann | Advanced |
 | Ave Maria | Bach / Gounod | Advanced |
 | Prelude in A major, Op. 28 No. 7 | Chopin | Advanced |
@@ -67,6 +80,7 @@ Every push to `main` builds a signed APK on GitHub Actions and publishes it as a
 | Jupiter — I Vow to Thee, My Country | Holst | Beginner |
 
 Melodies and harmonies were checked against the free editions of the [Mutopia Project](https://www.mutopiaproject.org).
+The one exception is the William Tell galop: its notes follow a published harmonica tab, with the galop's usual rhythm.
 Songs live in `app/src/main/java/app/harmonicaplayalong/music/SongLibrary.kt` in a short text notation, so adding one is
 a matter of typing its notes (see the comment on `Song` in `Song.kt`).
 

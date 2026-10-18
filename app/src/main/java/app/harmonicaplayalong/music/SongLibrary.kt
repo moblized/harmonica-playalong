@@ -299,13 +299,15 @@ object SongLibrary {
     private val ORDER = listOf(
         "ode-to-joy", "fur-elise", "symphony-5", "symphony-7", "moonlight", "pathetique", "pathetique-rondo",
         "violin-concerto", "sonatina-menuetto",
-        "canon-in-d", "bach-minuet", "bach-air", "emperor-hymn",
-        "eine-kleine", "rondo-alla-turca", "sonata-facile", "twinkle",
-        "schubert-ave-maria", "traumerei", "gounod-ave-maria", "chopin-prelude-7", "wedding-march", "brindisi",
+        "canon-in-d", "vivaldi-spring", "vivaldi-summer", "vivaldi-autumn", "vivaldi-winter",
+        "bach-minuet", "bach-air", "emperor-hymn",
+        "eine-kleine", "eine-kleine-romanze", "eine-kleine-menuetto", "rondo-alla-turca", "k331-theme",
+        "sonata-facile", "twinkle", "minuet-k2", "horn-concerto-4", "deh-vieni", "ave-verum",
+        "schubert-ave-maria", "william-tell", "traumerei", "gounod-ave-maria", "chopin-prelude-7", "wedding-march", "brindisi",
         "brahms-lullaby", "toreador", "blue-danube", "largo", "stars-and-stripes", "gymnopedie", "entertainer", "jupiter",
     )
 
-    val songs: List<Song> = (firstBatch + MoreSongs.songs).sortedBy { s ->
+    val songs: List<Song> = (firstBatch + MoreSongs.songs + EvenMoreSongs.songs).sortedBy { s ->
         ORDER.indexOf(s.id).let { if (it < 0) Int.MAX_VALUE else it }
     }
 
