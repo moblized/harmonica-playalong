@@ -40,7 +40,7 @@ data class Arrangement(
         val deepBends = notes.count { (it.harp?.bend ?: 0) >= 2 }
         when {
             unplayable > 0 || overblows > 0 -> Difficulty.ADVANCED
-            deepBends > 0 || bends > max(3, notes.size / 8) -> Difficulty.ADVANCED
+            deepBends > 2 || bends > max(3, notes.size / 8) -> Difficulty.ADVANCED
             bends > 0 -> Difficulty.INTERMEDIATE
             quick > notes.size / 10 || maxJump > 4 -> Difficulty.INTERMEDIATE
             else -> Difficulty.BEGINNER
@@ -66,10 +66,14 @@ object Arranger {
 
     /** How hard one way of playing a note is. Natural notes in holes 4-7 are free. */
     fun techniqueCost(n: HarpNote): Double {
+        // Deep bends (a whole step or more) are much harder than a single half-step bend,
+        // and harder still in quick passages, so they cost nearly as much as an overblow.
         val technique = when {
-            n.overblow -> 30.0
-            n.bend > 0 && n.breath == Breath.BLOW -> 3.5 + 1.5 * (n.bend - 1)
-            n.bend > 0 -> 2.5 + 1.5 * (n.bend - 1)
+            n.overblow -> 16.0
+            n.bend > 0 && n.breath == Breath.BLOW -> 4.5 + 3.5 * (n.bend - 1)
+            n.bend == 1 -> 3.0
+            n.bend == 2 -> 7.0
+            n.bend > 2 -> 10.0
             else -> 0.0
         }
         val register = when (n.hole) {

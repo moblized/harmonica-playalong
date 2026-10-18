@@ -1,7 +1,7 @@
 # Harmonica Play-Along
 
-An Android app for playing classical melodies on a 10-hole diatonic harmonica: Beethoven's Ode to Joy, Für Elise,
-the Fifth and Seventh symphonies, the Moonlight and Pathétique sonatas, and other classics.
+An Android app for playing classical melodies on a 10-hole diatonic harmonica: 27 pieces including Beethoven's Ode to Joy, Für Elise,
+the Fifth and Seventh symphonies and the Moonlight and Pathétique sonatas, plus Mozart, Bach, Schubert, Chopin, Satie, Holst and more.
 Built with Kotlin and Jetpack Compose.
 
 ## Install on your phone
@@ -30,21 +30,37 @@ Every push to `main` builds a signed APK on GitHub Actions and publishes it as a
 
 ## Songs
 
-| Song | Composer | Level on the harmonica |
+27 pieces. "Bends" counts the notes that need a bend or overblow in the key the app picks for a C-style harp.
+
+| Song | Composer | Level |
 | --- | --- | --- |
 | Ode to Joy (Symphony No. 9) | Beethoven | Beginner |
-| Für Elise | Beethoven | Advanced (blow bends) |
+| Für Elise | Beethoven | Advanced |
 | Symphony No. 5 — Fate motif | Beethoven | Intermediate |
 | Symphony No. 7 — Allegretto | Beethoven | Intermediate |
 | Moonlight Sonata | Beethoven | Advanced |
 | Pathétique — Adagio | Beethoven | Intermediate |
+| Pathétique — Rondo | Beethoven | Advanced |
+| Violin Concerto — Rondo | Beethoven | Beginner |
 | Menuetto in G (Sonata Op. 49 No. 2) | Beethoven | Intermediate |
-| Minuet in G | Bach / Petzold | Advanced (overblows in the second half) |
-| Lullaby | Brahms | Beginner |
-| The Blue Danube | Johann Strauss II | Advanced (one overblow) |
-| Twinkle Variations — Theme | Mozart | Beginner |
-| Largo — Going Home (New World Symphony) | Dvořák | Beginner |
 | Canon in D | Pachelbel | Beginner |
+| Minuet in G | Bach / Petzold | Advanced |
+| Air on the G String | Bach | Advanced |
+| Emperor Hymn | Haydn | Intermediate |
+| Eine kleine Nachtmusik | Mozart | Intermediate |
+| Rondo alla Turca | Mozart | Advanced |
+| Sonata facile (K. 545) | Mozart | Advanced |
+| Twinkle Variations — Theme | Mozart | Beginner |
+| Ave Maria | Schubert | Advanced |
+| Ave Maria | Bach / Gounod | Advanced |
+| Prelude in A major, Op. 28 No. 7 | Chopin | Advanced |
+| Wedding March | Mendelssohn | Intermediate |
+| Lullaby | Brahms | Beginner |
+| The Blue Danube | Johann Strauss II | Advanced |
+| Largo — Going Home (New World Symphony) | Dvořák | Beginner |
+| Gymnopédie No. 1 | Satie | Advanced |
+| The Entertainer | Joplin | Advanced |
+| Jupiter — I Vow to Thee, My Country | Holst | Beginner |
 
 Melodies and harmonies were checked against the free editions of the [Mutopia Project](https://www.mutopiaproject.org).
 Songs live in `app/src/main/java/app/harmonicaplayalong/music/SongLibrary.kt` in a short text notation, so adding one is

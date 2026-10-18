@@ -21,6 +21,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Favorite
 import androidx.compose.material.icons.rounded.FavoriteBorder
+import androidx.compose.material.icons.rounded.Close
+import androidx.compose.material.icons.rounded.Search
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -28,6 +30,7 @@ import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -79,9 +82,13 @@ fun LibraryScreen(
     modifier: Modifier = Modifier,
 ) {
     var filter by rememberSaveable { mutableStateOf(Filter.ALL) }
+    var query by rememberSaveable { mutableStateOf("") }
     var pickKey by remember { mutableStateOf(false) }
 
+    val needle = fold(query.trim())
     val songs = SongLibrary.songs.filter { s ->
+        needle.isEmpty() || fold("${s.title} ${s.composer} ${s.work}").contains(needle)
+    }.filter { s ->
         when (filter) {
             Filter.ALL -> true
             Filter.BEETHOVEN -> s.isBeethoven
@@ -121,6 +128,21 @@ fun LibraryScreen(
                     onClick = { pickKey = true },
                     label = { Text("My harmonica: ${settings.harpKey.label}") },
                 )
+                Spacer(Modifier.height(8.dp))
+                OutlinedTextField(
+                    value = query,
+                    onValueChange = { query = it },
+                    placeholder = { Text("Search songs or composers") },
+                    leadingIcon = { Icon(Icons.Rounded.Search, contentDescription = null) },
+                    trailingIcon = {
+                        if (query.isNotEmpty()) {
+                            IconButton(onClick = { query = "" }) { Icon(Icons.Rounded.Close, contentDescription = "Clear search") }
+                        }
+                    },
+                    singleLine = true,
+                    shape = RoundedCornerShape(50),
+                    modifier = Modifier.fillMaxWidth(),
+                )
             }
         }
         item {
@@ -136,7 +158,11 @@ fun LibraryScreen(
         if (songs.isEmpty()) {
             item {
                 Text(
-                    if (filter == Filter.FAVORITES) "Tap the heart on a song to keep it here." else "Nothing here yet.",
+                    when {
+                        query.isNotBlank() -> "No songs match \"${query.trim()}\"."
+                        filter == Filter.FAVORITES -> "Tap the heart on a song to keep it here."
+                        else -> "Nothing here yet."
+                    },
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     modifier = Modifier.padding(horizontal = 20.dp, vertical = 24.dp),
@@ -257,3 +283,7 @@ fun KeyPickerDialog(current: HarpKey, onPick: (HarpKey) -> Unit, onDismiss: () -
         confirmButton = { TextButton(onClick = onDismiss) { Text("Done") } },
     )
 }
+
+/** Lower-case and strip accents, so "fur elise" finds "Für Elise". */
+private fun fold(s: String): String =
+    java.text.Normalizer.normalize(s.lowercase(), java.text.Normalizer.Form.NFD).replace(Regex("\\p{M}+"), "")

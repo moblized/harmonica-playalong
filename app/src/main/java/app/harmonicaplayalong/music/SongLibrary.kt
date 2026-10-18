@@ -9,7 +9,7 @@ object SongLibrary {
 
     private const val MUTOPIA = "Notes checked against the Mutopia Project edition (mutopiaproject.org)."
 
-    val songs: List<Song> = listOf(
+    private val firstBatch: List<Song> = listOf(
         Song(
             id = "ode-to-joy",
             title = "Ode to Joy",
@@ -294,6 +294,20 @@ object SongLibrary {
             source = "Violin lines as commonly played; the eighth-note passage follows the Mutopia Project edition.",
         ),
     )
+
+    /** Library order: Beethoven first, then roughly by period. */
+    private val ORDER = listOf(
+        "ode-to-joy", "fur-elise", "symphony-5", "symphony-7", "moonlight", "pathetique", "pathetique-rondo",
+        "violin-concerto", "sonatina-menuetto",
+        "canon-in-d", "bach-minuet", "bach-air", "emperor-hymn",
+        "eine-kleine", "rondo-alla-turca", "sonata-facile", "twinkle",
+        "schubert-ave-maria", "gounod-ave-maria", "chopin-prelude-7", "wedding-march", "brahms-lullaby",
+        "blue-danube", "largo", "gymnopedie", "entertainer", "jupiter",
+    )
+
+    val songs: List<Song> = (firstBatch + MoreSongs.songs).sortedBy { s ->
+        ORDER.indexOf(s.id).let { if (it < 0) Int.MAX_VALUE else it }
+    }
 
     fun byId(id: String): Song? = songs.firstOrNull { it.id == id }
 }
